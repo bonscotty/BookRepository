@@ -5,7 +5,7 @@ namespace BookRepository.Services.BookServices
 {
     public interface IBookServices
     {
-        Book GetBook(int BookId);
+        Book GetBook(int BookId); 
         List<Book> GetAllBooks();
         Book PostBook(Book bookData);
         Book UpdateBook(Book id);
