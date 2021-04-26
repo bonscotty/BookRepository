@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookDepositoryClone.Domain
 {
     public class BaseIdentity
     {
+        [Key]
         public int Id { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
