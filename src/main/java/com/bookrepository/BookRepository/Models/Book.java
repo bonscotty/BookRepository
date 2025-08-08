@@ -31,6 +31,9 @@ public class Book {
     @Column(name = "author", nullable = false, length=100)
     private String author;
 
+    @Column(name = "genre", nullable = false, length = 100)
+    private String genre;
+
     @Column(name = "page_count")
     private int pageCount;
 
