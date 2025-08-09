@@ -37,6 +37,9 @@ public class Book {
     @Column(name = "page_count")
     private int pageCount;
 
+    @Column(name = "publication_year", nullable = false, length = 4)
+    private int publicationYear;
+
     @Column(name = "book_price", nullable = false)
     private double price;
 
