@@ -8,7 +8,7 @@ public record BookDTO(
     String title,
     String author,
     String description,
-    String publicationYear,
+    int publicationYear,
     String genre,
     int pageCount,
     Double price

@@ -10,14 +10,9 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface BookMapper {
     BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+    BookDTO bookToBookDTO (Book book);
 
-    //source -> DTO
-    Book bookToBookDTO (BookDTO bookDTO);
-
-    //DTO -> source
-//    @Mapping(target = "id", ignore = true)
-//    @Mapping(target = "createdAt", ignore = true)
-    BookDTO bookDTOToBook (Book book);
+    Book bookDTOToBook (BookDTO bookDTO);
 
     //DTO -> source, ignore nulls
     @Mapping(target = "id", ignore = true)

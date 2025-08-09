@@ -155,7 +155,7 @@ public class BookService {
     public BookDTO updateBook(long bookId, BookDTO requestBook) {
         Book existingBook = bookRepository.findById(bookId).orElseThrow(() -> new RuntimeException("Book Not Found!"));
 
-        return bookMapper(requestBook,existingBook);
+        return bookMappingFunction(requestBook,existingBook);
     }
 
 //    public BookDTO deleteBook(){
@@ -163,10 +163,10 @@ public class BookService {
 //    }
 
     //local methods
-    private BookDTO bookMapper(BookDTO sourceBook, Book destinationBook) {
+    private BookDTO bookMappingFunction(BookDTO sourceBook, Book destinationBook) {
         bookMapper.updateBookFromDTO(sourceBook, destinationBook);
         Book updatedBook = bookRepository.save(destinationBook);
         //TODO: add logging that book is saved successfully
-        return bookMapper.bookDTOToBook(updatedBook);
+        return bookMapper.bookToBookDTO(updatedBook);
     }
 }
