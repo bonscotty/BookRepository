@@ -18,4 +18,5 @@ public interface BookMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     void updateBookFromDTO(BookDTO bookDTO, @MappingTarget Book book);
+
 }
